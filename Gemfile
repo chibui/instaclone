@@ -14,6 +14,15 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Use font-awesome-sass
+gem 'font-awesome-sass'
+# Use acts_as_votable for user up/down voting
+gem 'acts_as_votable'
+# Use paperclip for file attachments
+gem "paperclip", "~> 5.0.0"
+# Use materialize-sass CSS framework
+gem 'materialize-sass'
+# Use devise for user authentication
 gem 'devise'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -42,4 +42,8 @@ Rails.application.configure do
   # default_url_options for devise and action_mailer
   # Devise log mail to console
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # adding bin paths for Paperclip
+  # Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin; C:\Program Files\ImageMagick-7.0.3-Q16'
+  # Paperclip.options[:swallow_stderr] = false
 end
