@@ -2,6 +2,13 @@
   <div class="container">
     <p id="notice"><%= notice %></p>
 
+    <% if current_user %>
+      <!-- <%= link_to 'New Post', new_post_path %> -->
+      <%= link_to new_post_path, class:"waves-effect waves-light btn" do %>
+        <i class="fa fa-plus-square-o" aria-hidden="true"> New Post</i>
+      <% end %>
+    <% else %>
+    <% end %>
 
     <% @posts.each do |post| %>
       <div class="row">
@@ -41,7 +48,6 @@
             </div>
 
             <div class="card-action">
-              <%= link_to 'edit', edit_post_path(post) %> 
               <% if current_user %>
                 <% if current_user.voted_up_on? post %>
                   <a>
@@ -56,20 +62,22 @@
                     <% end %>
                   </a>
                 <% end %>
+              <% else %>
+              <% end %>
+              <!-- Show edit option if current user is same as post user -->
+              <% if current_user %>
+                <% if current_user.id == post.user_id%>
+                  <%= link_to 'edit', edit_post_path(post) %>
                 <% else %>
-                  <p>
-                    Please sign in
-                  </p>
-
-            <% end %>
+                <% end %>
+              <% end %>
             </div>
 
           </div>
         </div>
       </div>
     <% end %>
-
-  <%= link_to 'New Post', new_post_path %>
-  <br>
+    <!-- if logged in the allow new post -->
+    <br>
   </div>
 </body>

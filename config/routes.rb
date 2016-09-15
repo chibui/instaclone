@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     member do
       put "like", to: "posts#upvote"
       put "dislike", to: "posts#downvote"
+      put "edit", to: "posts#edit"
     end
   end
 
